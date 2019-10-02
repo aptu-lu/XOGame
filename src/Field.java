@@ -1,6 +1,6 @@
 public class Field {
     private static final int SIZE = 3;
-    static boolean gameOver = false;
+    static boolean gameIsOver = false;
 
     static char[][] cells = new char[SIZE][SIZE];
 
@@ -21,7 +21,7 @@ public class Field {
         }
     }
 
-    static void gameIsOver() {
+    static void gameOver() {
         if ((cells[0][0] == cells[0][1] && cells[0][1] == cells[0][2] && cells[0][1] != '.') ||
                 (cells[1][0] == cells[1][1] && cells[1][1] == cells[1][2] && cells[1][1] != '.') ||
                 (cells[2][0] == cells[2][1] && cells[2][1] == cells[2][2] && cells[2][1] != '.') ||
@@ -30,9 +30,7 @@ public class Field {
                 (cells[0][2] == cells[1][2] && cells[1][2] == cells[2][2] && cells[1][2] != '.') ||
                 (cells[0][0] == cells[1][1] && cells[1][1] == cells[2][2] && cells[1][1] != '.') ||
                 (cells[0][2] == cells[1][1] && cells[1][1] == cells[2][0] && cells[1][1] != '.')) {
-            gameOver = true;
-        } else {
-            gameOver = false;
+            gameIsOver = true;
         }
     }
 }

@@ -5,7 +5,7 @@ public class Player {
     private int shotY;
     static int count = 1;
 
-    void getShot() {
+    Point getPoint() {
         do {
             do {
                 System.out.println("koordinata po X");
@@ -17,12 +17,15 @@ public class Player {
                 shotY = Integer.parseInt(new Scanner(System.in).nextLine());
             } while (shotY < 0 | shotY > Field.cells.length - 1);
         } while (Field.cells[shotX][shotY] == 'X' || Field.cells[shotX][shotY] == 'O');
+        return new Point(shotX,shotY);
+    }
 
+    void setPoint(Point point){
         count++;
         if (count % 2 == 1) {
-            Field.cells[shotX][shotY] = 'X';
+            Field.cells[point.x][point.y] = 'X';
         } else {
-            Field.cells[shotX][shotY] = 'O';
+            Field.cells[point.x][point.y] = 'O';
         }
     }
 }
