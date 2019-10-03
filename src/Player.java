@@ -17,6 +17,7 @@ public class Player {
                 shotY = Integer.parseInt(new Scanner(System.in).nextLine());
             } while (shotY < 0 | shotY > Field.cells.length - 1);
         } while (Field.cells[shotX][shotY] == 'X' || Field.cells[shotX][shotY] == 'O');
+        Point.count++;
         return new Point(shotX,shotY);
     }
 

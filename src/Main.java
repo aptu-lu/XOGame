@@ -23,5 +23,6 @@ public class Main {
                 System.out.println("Pobedil vtoroi igrok!");
             }
             }while (!Field.gameIsOver) ;
+        System.out.println("Za " + Point.count + " hodov!");
     }
 }
